@@ -30,12 +30,14 @@ app.use('/uploads', express.static(path.join(__dirname, '/uploads')))
 app.use(notFound);
 app.use(errorHandler);
 
+const msg="<div><h1>Welcome to E-Commerce Book Store API</h1>"
+
+app.get('/', function (req, res) {
+    res.send(`${msg}`);
+  })
 
 //port
 const PORT=process.env.PORT || 5000;
-
-
-
 
 const connect = async () => {
     try {
