@@ -1,6 +1,7 @@
-import path from 'path'
-import express from 'express'
+import path from 'path';
+import express from 'express';
 import dotenv from 'dotenv';
+import cors from "cors";
 import mongoose from 'mongoose';
 import productRoutes from './routes/productRouter.js';
 import userRoutes from './routes/userRoutes.js'
@@ -12,6 +13,8 @@ dotenv.config();
 
 
 const app = express();
+//CORS
+app.use(cors())
 
 app.use(express.json())
 
