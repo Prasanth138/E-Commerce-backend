@@ -14,7 +14,7 @@ dotenv.config();
 
 const app = express();
 //CORS
-app.use(cors())
+app.use(cors({origin: '*'}));
 
 app.use(express.json())
 
@@ -33,11 +33,11 @@ app.use('/uploads', express.static(path.join(__dirname, '/uploads')))
 app.use(notFound);
 app.use(errorHandler);
 
-const msg="<div><h1>Welcome to E-Commerce Book Store API</h1>"
+const msg="<div><h1>Welcome to Hotel Booking API</h1></div>"
 
 app.get('/', function (req, res) {
-    res.send(`${msg}`);
-  })
+  res.send(`${msg}`);
+})
 
 //port
 const PORT=process.env.PORT || 5000;
